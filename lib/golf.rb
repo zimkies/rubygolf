@@ -37,5 +37,9 @@ class Golf
         s[0] ? s : a
       }
     end
+
+    def hole9(s)
+      s.split.map { |w| w.length <= 10 ? w : "#{w[0..3]}...#{w[-3..-1]}" }.join(' ')
+    end
   end
 end
