@@ -14,10 +14,10 @@ class Golf
 
     def hole4(a)
       a.map{|x|
-        case x[0..2]
-        when "man"
+        case x[0]
+        when "m"
           "hat(#{x})"
-        when "dog"
+        when "d"
           x.chop<<'(bone))'
         else
           "dead#{x[3..-1]}"
