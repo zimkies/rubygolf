@@ -39,7 +39,7 @@ class Golf
     end
 
     def hole7 a
-      (r = []) << a[0].to_s
+      r = [] << a[0].to_s
       a.map.with_index { |i, x| n = a[x+1]; n != i+1 ? (r[-1]<<"-#{i}" if i != r[-1].to_i; r << n.to_s) : p }
       r.pop
       r
