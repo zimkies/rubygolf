@@ -38,15 +38,11 @@ class Golf
       }
     end
 
-    def hole7(a)
-      # m=a.each_cons(2).map{|x|x[1]-x[0]}
-      # a.map.with_index{|x,i|
-
-      # }
-      # return [] if !a[0]
-      # i,j=0,1
-      # while a[j]&&a[j]-a[i]==1;i+=1;j+=1;end
-      # (i!=j ? ["#{i}-#{j}"]:i.to_s) + hole7(a[j+1..-1])
+    def hole7 a
+      (r = []) << a[0].to_s
+      a.each_with_index { |i, x| a[x+1] != i+1 ? (r.last<<"-#{i}" if !(i == r[-1].to_i); r << "#{a[x+1]}") : p }
+      r.pop
+      r
     end
 
     def hole8(n)
