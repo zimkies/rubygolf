@@ -29,6 +29,15 @@ class Golf
       (1..a.size).flat_map{|n|a.each_cons(n).to_a}
     end
 
+    def hole6(n)
+      (1..n).map { |a|
+        s = ''
+        s << 'fizz' if a % 3 == 0
+        s << 'buzz' if a % 5 == 0
+        s[0] ? s : a
+      }
+    end
+
     def hole7(a)
       # m=a.each_cons(2).map{|x|x[1]-x[0]}
       # a.map.with_index{|x,i|
@@ -44,6 +53,9 @@ class Golf
       return n<2 ? [1]:[1,1] if n < 3
       a=hole8(n-1)
       a<<a[-1]+a[-2]
+
+    def hole9(s)
+      s.split.map { |w| w.length <= 10 ? w : "#{w[0..3]}...#{w[-3..-1]}" }.join(' ')
     end
   end
 end
