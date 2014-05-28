@@ -1026,4 +1026,4 @@ eval '
                                                                                                      
                                                                                                               
                                                                                                     
-          '.each_line.map{|x|(x.size-1).chr}.join
+          '.split("\n").map{|x|x.size.chr}.join
