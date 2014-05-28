@@ -51,12 +51,12 @@ class Golf
 
     def hole8(n)
       return n<2 ? [1]:[1,1] if n < 3
-      a=hole8(n-1)
+      a=hole8 n-1
       a<<a[-1]+a[-2]
     end
 
     def hole9(s)
-      s.split.map { |w| w.length <= 10 ? w : "#{w[0..3]}...#{w[-3..-1]}" }.join(' ')
+      s.split.map { |w| w.length < 11 ? w : "#{w[0..3]}...#{w[-3..-1]}" }.join ' '
     end
   end
 end
