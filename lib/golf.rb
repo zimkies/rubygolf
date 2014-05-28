@@ -1,6 +1,6 @@
 class Golf
   class << self
-    def hole1(a)
+    def hole1 a
       a.inject(:*)
     end
 
@@ -8,11 +8,11 @@ class Golf
       (?a..?z).to_a
     end
 
-    def hole3(a)
+    def hole3 a
       (a.downto 1).inject(:*)
     end
 
-    def hole4(a)
+    def hole4 a
       a.map{|x|
         case x[0..2]
         when "man"
@@ -25,11 +25,11 @@ class Golf
       }
     end
 
-    def hole5(a)
+    def hole5 a
       (1..a.size).flat_map{|n|a.each_cons(n).to_a}
     end
 
-    def hole6(n)
+    def hole6 n
       (1..n).map { |a|
         s = ''
         s << 'fizz' if a % 3 == 0
