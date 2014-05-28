@@ -28,5 +28,22 @@ class Golf
     def hole5(a)
       (1..a.size).flat_map{|n|a.each_cons(n).to_a}
     end
+
+    def hole7(a)
+      # m=a.each_cons(2).map{|x|x[1]-x[0]}
+      # a.map.with_index{|x,i|
+
+      # }
+      # return [] if !a[0]
+      # i,j=0,1
+      # while a[j]&&a[j]-a[i]==1;i+=1;j+=1;end
+      # (i!=j ? ["#{i}-#{j}"]:i.to_s) + hole7(a[j+1..-1])
+    end
+
+    def hole8(n)
+      return n<2 ? [1]:[1,1] if n < 3
+      a=hole8(n-1)
+      a<<a[-1]+a[-2]
+    end
   end
 end
